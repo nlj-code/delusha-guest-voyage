@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="SY Delusha" />
+  <meta name="application-name" content="SY Delusha" />
+  <meta name="description" content="SY Delusha · 43m Sailing Yacht Guest Voyage Companion, Interactive Mediterranean Logbook, Shared Photo & Video Hub, Crew & Water Toys." />
+  <title>SY Delusha · Voyage Companion</title>
+  <link rel="manifest" href="./manifest.webmanifest?v=2" />
+  <link rel="icon" type="image/png" href="./icon-192.png?v=2" />
+  <link rel="apple-touch-icon" href="./icon-512.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-root">
+    <!-- Apple Global Nav-Style Translucent Header -->
+    <header class="top-header">
+      <div class="brand-cluster">
+        <div class="yacht-crest" aria-hidden="true">
+          <svg class="delusha-mark-svg" viewBox="16600 12000 9100 10200" fill="currentColor">
+            <polygon points="19803.72,12772.72 19803.72,21618.61 17274.67,21618.61 17274.67,12568.9 17698.01,12568.9 17698.01,21195.27 19380.38,21195.27 19380.38,12772.72"/>
+            <path d="M19592.05 12561.88l951.65 -3.03c96.54,-0.3 182.48,8.66 265.54,17.31l8.46 0.88c391.93,40.76 824.54,160.51 1233.36,323.2 436.68,173.79 848.69,397.54 1156.53,626.94 569.88,424.69 1038.99,960.66 1360.44,1583.54 304.57,590.17 476.67,1256.82 476.67,1979.11 0,751.05 -187.92,1445.22 -517.29,2054.88 -347.86,643.86 -853.49,1192.11 -1461.86,1612.16 -237.2,163.77 -488.38,307.72 -752.89,429.19 -256.44,117.77 -525.81,214.23 -807.56,286.91 -154.13,39.76 -311.84,75.87 -470.1,101.66 -166.32,27.1 -334.33,43.98 -501.47,43.98l-1153.15 0 0 -9056.05 211.67 -0.68zm951.65 418.65l-739.98 2.36 0 8212.38 729.81 0c147.52,0 292.38,-14.33 433.67,-37.36 149.34,-24.34 294.07,-57.35 433.72,-93.38 255.39,-65.88 501.09,-154.02 736.46,-262.11 240.72,-110.55 470.4,-242.31 688.39,-392.81 554.04,-382.53 1013.95,-880.77 1329.58,-1464.98 296.71,-549.22 466.01,-1175.72 466.01,-1854.8 0,-653.47 -154.78,-1254.84 -428.71,-1785.63 -291.49,-564.82 -717.86,-1051.58 -1236.42,-1438.02 -280.61,-209.11 -658.44,-413.96 -1060.61,-574.02 -374.42,-149 -767.91,-258.39 -1120.92,-295.1l-8.46 -0.88c-74.84,-7.8 -152.28,-15.86 -222.54,-15.65z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <div class="yacht-name-row">
+            <svg class="delusha-wordmark-svg" viewBox="6400 22550 28900 4250" fill="currentColor" aria-label="DELUSHA">
+              <path d="M6592.93 26529.86l1070.93 0c1247.33,0 2015.88,-693.89 2015.88,-1882.6 0,-1200.08 -755.95,-1871.22 -2015.88,-1871.22l-1070.93 0 0 3753.82zm419.49 -361.67l0 -3016.25 625.33 0c287.95,0 548.35,24.94 762.99,105.83 553.97,208.79 846.92,696.85 846.92,1396.52 0,495.01 -138.17,902.59 -427.3,1160.69 -274.52,245.05 -686.92,353.21 -1182.61,353.21l-625.33 0z"/>
+              <polygon points="11481.44,26505.6 13436.84,26505.6 13436.84,26137.41 11903.16,26137.41 11903.16,24574.4 13070.25,24574.4 13070.25,24237.08 11903.16,24237.08 11903.16,23137.62 13441.7,23137.62 13441.7,22776.04 11481.44,22776.04"/>
+              <polygon points="15306.65,26529.86 17187.28,26529.86 17187.28,26163.87 15710.74,26163.87 15705.46,22776.17 15301.37,22776.17"/>
+              <path d="M18949.56 25181.9c0,887.26 396.21,1410.52 1318.26,1410.52 845.87,0 1318.25,-528.94 1318.25,-1410.52l0 -2405.86 -426.32 0 0 2428.61c0,716.38 -353.14,1000.94 -891.66,1000.94 -538.52,0 -910.94,-253.69 -910.94,-1000.94l0 -2428.61 -407.59 0 0 2405.86z"/>
+              <path d="M23305.08 25642.96c128.08,674.83 572.16,918.59 1108.8,918.59 552.83,0 1037.82,-406.13 1026.31,-975.83 -11.01,-544.11 -150.62,-822.43 -730.21,-1080.65l-433.55 -193.15c-405.32,-180.58 -485.56,-379.8 -485.56,-652.8 0,-210.71 96.75,-405.71 286.29,-502.57 242.89,-124.12 608.49,-97.04 800.97,158.76 27.99,37.21 53.71,79.47 76.53,127.03l324.21 -172.61c-157.6,-366.54 -470.65,-556.26 -864.03,-556.26 -967.65,0 -1270.74,1153.86 -765.85,1700.8 304.76,330.15 806.72,413.88 1130.69,631 238.39,159.77 314.87,302.57 283.48,612.4 -35.81,353.41 -248.2,540.9 -653.69,536.62 -364.87,-3.85 -609.63,-137.68 -761.6,-665.67l-342.79 114.34z"/>
+              <polygon points="27667.99,26529.86 28075.58,26529.86 28075.58,24517.07 29990.27,24517.07 29990.27,26529.86 30396.3,26529.86 30396.3,22776.04 29990.27,22776.04 29990.27,24166.52 28075.58,24166.52 28075.58,22776.04 27667.99,22776.04"/>
+              <path d="M34683.48 26529.86l400.25 0 -1527.53 -3751.75 -92.61 0 -1499.48 3743.74 -3.68 7.83 394.79 0.18 294.79 -743.82 1737.11 0 296.36 743.82zm-1174.88 -2946.18l752.95 1870.97 -1471.82 0 718.87 -1870.97z"/>
+            </svg>
+            <span class="yacht-length-pill">43m Yacht</span>
+          </div>
+          <div id="header-voyage-subtitle" class="voyage-subtitle">Montenegro &amp; Dalmatian Islands Odyssey</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-voyage-pass" type="button" class="pass-pill-btn" title="View Voyage QR Pass or Switch Guest Code">
+          <span class="pass-dot"></span>
+          <span id="active-voyage-code-label" class="mono">DELUSHA-JULY-2026</span>
+          <span class="qr-mini-icon">Pass</span>
+        </button>
+        <button id="btn-theme-toggle" type="button" class="icon-pill-btn" title="Switch Appearance (Light / Dark)">Dark</button>
+        <button id="btn-admin-mode" type="button" class="icon-pill-btn admin-btn" title="Owner / Captain Admin Mode (PIN: 1943)">Captain</button>
+      </div>
+    </header>
+
+    <!-- Main Content Viewport (4 Guest Tabs + Admin Panel) -->
+    <main class="main-viewport">
+
+      <!-- =========================================================
+           TAB 1: TODAY & VOYAGE MAP (THE LOGBOOK)
+           ========================================================= -->
+      <section id="tab-today" class="tab-view active" aria-label="Today and Voyage Map">
+        <div class="today-split-layout">
+          <!-- Interactive Mercator Voyage Chart -->
+          <div id="chart-container" class="chart-stage">
+            <canvas id="chart-canvas"></canvas>
+
+            <!-- Top-Left Legend Overlay -->
+            <div class="chart-legend-bar">
+              <span class="legend-item"><span class="legend-line solid"></span> Sailed</span>
+              <span class="legend-item"><span class="legend-line dashed"></span> Planned</span>
+              <span class="legend-item"><span class="legend-pin photo"></span> Photo Pin</span>
+            </div>
+
+            <!-- Top-Right Chart Controls (+, -, FIT) -->
+            <div class="chart-zoom-controls">
+              <button id="btn-zoom-in" type="button" class="chart-ctrl-btn" title="Zoom In" aria-label="Zoom In">+</button>
+              <button id="btn-zoom-out" type="button" class="chart-ctrl-btn" title="Zoom Out" aria-label="Zoom Out">−</button>
+              <button id="btn-fit" type="button" class="chart-ctrl-btn fit-btn" title="Fit Voyage Route">FIT</button>
+            </div>
+
+            <!-- Bottom-Left Router Status, GPS & Quick Tender Pin -->
+            <div class="chart-bottom-bar">
+              <span id="worker-status" class="status-pill">INIT ROUTER…</span>
+              <button id="btn-gps" type="button" class="gps-pill-btn" title="Show live GPS position on chart">📍 MY GPS</button>
+              <button id="btn-chart-tender" type="button" class="tender-quick-pill" title="Walk to current port tender pick-up">🚤 TENDER PIN</button>
+            </div>
+          </div>
+
+          <!-- Right / Bottom Scrollable Logbook & Today Column -->
+          <div class="today-cards-column">
+            <!-- 1. "Today Aboard" Morning Briefing Card -->
+            <article class="luxury-card briefing-card">
+              <div class="card-eyebrow-row">
+                <span class="eyebrow-badge live-pulse">● TODAY ABOARD SY DELUSHA</span>
+                <span id="briefing-dates" class="mono muted-caption">July 14 – July 21, 2026</span>
+              </div>
+              <h2 id="briefing-location" class="briefing-title">Korčula Old Town Anchorage, Croatia</h2>
+              <p id="briefing-weather" class="briefing-weather-line">Sunny &amp; Clear · Afternoon NW Maestral 14–18 kn</p>
+
+              <!-- Weather & Sea Temp Pills + Tender Direct Action -->
+              <div class="briefing-metrics-row">
+                <div class="metric-chip">
+                  <span class="metric-label">AIR TEMP</span>
+                  <span id="briefing-air" class="metric-val mono">29°C</span>
+                </div>
+                <div class="metric-chip sea-chip">
+                  <span class="metric-label">SEA WATER</span>
+                  <span id="briefing-sea" class="metric-val mono">25°C</span>
+                </div>
+                <button id="btn-hero-tender" type="button" class="walk-tender-cta">
+                  <span>📍 Walk to Tender Pick-Up</span>
+                </button>
+              </div>
+
+              <!-- Daily Schedule Timeline -->
+              <div class="schedule-box">
+                <div class="section-subhead">TODAY’S SCHEDULE</div>
+                <ul id="briefing-schedule-list" class="schedule-timeline"></ul>
+              </div>
+            </article>
+
+            <!-- 2. Voyage Totals Summary Strip -->
+            <section class="voyage-totals-strip" aria-label="Voyage Route Totals">
+              <div class="v-stat">
+                <span class="v-stat-label">TOTAL ROUTE</span>
+                <div class="v-stat-val-row"><span id="stat-total-nm" class="v-stat-val mono">0</span><span class="v-stat-unit">nm</span></div>
+              </div>
+              <div class="v-stat">
+                <span class="v-stat-label">SAILED SO FAR</span>
+                <div class="v-stat-val-row"><span id="stat-sailed-nm" class="v-stat-val mono">0</span><span class="v-stat-unit">nm</span></div>
+              </div>
+              <div class="v-stat">
+                <span class="v-stat-label">PEAK SAIL SPEED</span>
+                <div class="v-stat-val-row"><span id="stat-peak-kn" class="v-stat-val mono">13.6</span><span class="v-stat-unit">kn</span></div>
+              </div>
+              <div class="v-stat">
+                <span class="v-stat-label">STOPS</span>
+                <div class="v-stat-val-row"><span id="stat-stops-count" class="v-stat-val mono">5</span></div>
+              </div>
+            </section>
+
+            <!-- 3. Itinerary Stops & Port Mini-Guides -->
+            <article class="luxury-card">
+              <div class="card-header-flex">
+                <div>
+                  <span class="section-subhead">VOYAGE ITINERARY &amp; PORT GUIDES</span>
+                  <h3 class="card-title-sm">Tap any stop for Port Spotlight &amp; Tender Pin</h3>
+                </div>
+              </div>
+              <div id="itinerary-stops-list" class="itinerary-stops-list"></div>
+            </article>
+
+            <!-- 4. Daily Logbook Stamps (Nautical miles, peak speed under sail, wind - no wine log) -->
+            <article class="luxury-card">
+              <div class="card-header-flex">
+                <div>
+                  <span class="section-subhead">CAPTAIN’S VOYAGE LOGBOOK</span>
+                  <h3 class="card-title-sm">Daily Sails, Peak Boat Speed &amp; Wind Stamps</h3>
+                </div>
+                <button id="btn-open-souvenir-from-log" type="button" class="secondary-pill-btn">🗺️ Souvenir Poster</button>
+              </div>
+              <div id="logbook-stamps-list" class="logbook-stamps-grid"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TAB 2: PHOTOS & VIDEOS (SHARED TRIP GALLERY)
+           ========================================================= -->
+      <section id="tab-media" class="tab-view" aria-label="Shared Voyage Photos and Videos">
+        <div class="page-scroll-container">
+          <!-- Gallery Hero & Upload Bar -->
+          <div class="luxury-card media-hero-card">
+            <div class="media-hero-top">
+              <div>
+                <span class="eyebrow-badge">PRIVATE VOYAGE MEDIA HUB · FULL HD</span>
+                <h2 class="section-main-title">Shared Trip Photos &amp; Videos</h2>
+                <p class="muted-desc">
+                  Auto-grouped by stop &amp; pinned to the voyage chart via EXIF GPS. Smart client optimization (~1.5 MB HD photos &amp; 1080p clips) syncs seamlessly when on Starlink.
+                </p>
+              </div>
+              <div class="media-hero-actions">
+                <label for="media-upload-input" class="primary-cta-btn upload-btn-label">
+                  <span>📸 + Upload Photos / Videos</span>
+                  <input id="media-upload-input" type="file" accept="image/*,video/*" multiple hidden />
+                </label>
+                <button id="btn-tv-slideshow" type="button" class="secondary-cta-btn">📺 Saloon TV Slideshow</button>
+                <button id="btn-souvenir-poster" type="button" class="secondary-cta-btn">🖼️ Voyage Souvenir Poster</button>
+              </div>
+            </div>
+
+            <!-- Offline Upload Queue & Google Drive Sync Status Bar -->
+            <div class="sync-status-strip">
+              <div class="sync-left">
+                <span id="network-status-dot" class="status-dot online"></span>
+                <span id="sync-queue-text" class="mono">Starlink Connected · All media synced to SY Delusha Voyages / 2026</span>
+              </div>
+              <div class="sync-right">
+                <button id="btn-download-highlights" type="button" class="gold-outline-btn">
+                  ⭐ Download All Highlights (<span id="highlights-count">0</span>)
+                </button>
+              </div>
+            </div>
+
+            <!-- Filter Bar (All, Best of Voyage ⭐, Videos ▶, or By Stop) -->
+            <div id="media-filter-bar" class="filter-pills-row"></div>
+          </div>
+
+          <!-- Grouped Photo & Video Grid -->
+          <div id="media-gallery-container" class="media-gallery-sections"></div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TAB 3: MEET THE CREW
+           ========================================================= -->
+      <section id="tab-crew" class="tab-view" aria-label="Meet the Crew of SY Delusha">
+        <div class="page-scroll-container">
+          <div class="luxury-card header-banner-card">
+            <span class="eyebrow-badge">WARM MEDITERRANEAN HOSPITALITY</span>
+            <h2 class="section-main-title">Meet Your Crew Aboard SY Delusha</h2>
+            <p class="muted-desc">
+              Our dedicated crew of six is here to make every passage, anchorage, meal, and watersports session unforgettable.
+            </p>
+          </div>
+
+          <div id="crew-cards-grid" class="crew-grid"></div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TAB 4: THE YACHT, WATER TOYS & LIFE ABOARD
+           ========================================================= -->
+      <section id="tab-yacht" class="tab-view" aria-label="The Yacht, Water Toys and Life Aboard">
+        <div class="page-scroll-container">
+          <!-- 1. Starlink Wi-Fi Instant Card -->
+          <article class="luxury-card wifi-banner-card">
+            <div class="wifi-info-col">
+              <span class="eyebrow-badge">HIGH-SPEED MARITIME STARLINK</span>
+              <h2 class="section-main-title">Onboard Wi-Fi Connection</h2>
+              <p class="muted-desc">Coverage throughout the deckhouse saloon, aft cockpit, foredeck, and all guest staterooms.</p>
+              <div class="wifi-creds-grid">
+                <div class="wifi-cred-box">
+                  <span class="cred-label">NETWORK (SSID)</span>
+                  <div class="cred-val-row">
+                    <span id="wifi-ssid-text" class="mono cred-val">SY_Delusha_Starlink</span>
+                    <button id="btn-copy-ssid" type="button" class="mini-copy-btn">Copy</button>
+                  </div>
+                </div>
+                <div class="wifi-cred-box">
+                  <span class="cred-label">PASSWORD</span>
+                  <div class="cred-val-row">
+                    <span id="wifi-pass-text" class="mono cred-val">SailsUp2026!</span>
+                    <button id="btn-copy-pass" type="button" class="mini-copy-btn">Copy Password</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="wifi-qr-col">
+              <canvas id="wifi-qr-canvas" width="136" height="136" class="qr-box-canvas"></canvas>
+              <span class="qr-caption">Point camera to join Wi-Fi</span>
+            </div>
+          </article>
+
+          <!-- 2. Water Toys & Tender Locker -->
+          <article class="luxury-card">
+            <span class="eyebrow-badge">ONBOARD WATERSPORTS LOCKER</span>
+            <h2 class="section-main-title">Water Toys &amp; Tenders</h2>
+            <p class="muted-desc">Let the deck crew know anytime at anchor which toys you’d like launched from the stern platform.</p>
+            <div id="water-toys-grid" class="toys-grid"></div>
+          </article>
+
+          <!-- 3. About SY Delusha & Technical Specifications -->
+          <article class="luxury-card">
+            <div class="yacht-brand-hero">
+              <svg class="delusha-stacked-logo-svg" viewBox="6200 12100 29300 14900" fill="currentColor" aria-label="SY Delusha Logo">
+                <polygon points="19803.72,12772.72 19803.72,21618.61 17274.67,21618.61 17274.67,12568.9 17698.01,12568.9 17698.01,21195.27 19380.38,21195.27 19380.38,12772.72"/>
+                <path d="M19592.05 12561.88l951.65 -3.03c96.54,-0.3 182.48,8.66 265.54,17.31l8.46 0.88c391.93,40.76 824.54,160.51 1233.36,323.2 436.68,173.79 848.69,397.54 1156.53,626.94 569.88,424.69 1038.99,960.66 1360.44,1583.54 304.57,590.17 476.67,1256.82 476.67,1979.11 0,751.05 -187.92,1445.22 -517.29,2054.88 -347.86,643.86 -853.49,1192.11 -1461.86,1612.16 -237.2,163.77 -488.38,307.72 -752.89,429.19 -256.44,117.77 -525.81,214.23 -807.56,286.91 -154.13,39.76 -311.84,75.87 -470.1,101.66 -166.32,27.1 -334.33,43.98 -501.47,43.98l-1153.15 0 0 -9056.05 211.67 -0.68zm951.65 418.65l-739.98 2.36 0 8212.38 729.81 0c147.52,0 292.38,-14.33 433.67,-37.36 149.34,-24.34 294.07,-57.35 433.72,-93.38 255.39,-65.88 501.09,-154.02 736.46,-262.11 240.72,-110.55 470.4,-242.31 688.39,-392.81 554.04,-382.53 1013.95,-880.77 1329.58,-1464.98 296.71,-549.22 466.01,-1175.72 466.01,-1854.8 0,-653.47 -154.78,-1254.84 -428.71,-1785.63 -291.49,-564.82 -717.86,-1051.58 -1236.42,-1438.02 -280.61,-209.11 -658.44,-413.96 -1060.61,-574.02 -374.42,-149 -767.91,-258.39 -1120.92,-295.1l-8.46 -0.88c-74.84,-7.8 -152.28,-15.86 -222.54,-15.65z"/>
+                <path d="M6592.93 26529.86l1070.93 0c1247.33,0 2015.88,-693.89 2015.88,-1882.6 0,-1200.08 -755.95,-1871.22 -2015.88,-1871.22l-1070.93 0 0 3753.82zm419.49 -361.67l0 -3016.25 625.33 0c287.95,0 548.35,24.94 762.99,105.83 553.97,208.79 846.92,696.85 846.92,1396.52 0,495.01 -138.17,902.59 -427.3,1160.69 -274.52,245.05 -686.92,353.21 -1182.61,353.21l-625.33 0z"/>
+                <polygon points="11481.44,26505.6 13436.84,26505.6 13436.84,26137.41 11903.16,26137.41 11903.16,24574.4 13070.25,24574.4 13070.25,24237.08 11903.16,24237.08 11903.16,23137.62 13441.7,23137.62 13441.7,22776.04 11481.44,22776.04"/>
+                <polygon points="15306.65,26529.86 17187.28,26529.86 17187.28,26163.87 15710.74,26163.87 15705.46,22776.17 15301.37,22776.17"/>
+                <path d="M18949.56 25181.9c0,887.26 396.21,1410.52 1318.26,1410.52 845.87,0 1318.25,-528.94 1318.25,-1410.52l0 -2405.86 -426.32 0 0 2428.61c0,716.38 -353.14,1000.94 -891.66,1000.94 -538.52,0 -910.94,-253.69 -910.94,-1000.94l0 -2428.61 -407.59 0 0 2405.86z"/>
+                <path d="M23305.08 25642.96c128.08,674.83 572.16,918.59 1108.8,918.59 552.83,0 1037.82,-406.13 1026.31,-975.83 -11.01,-544.11 -150.62,-822.43 -730.21,-1080.65l-433.55 -193.15c-405.32,-180.58 -485.56,-379.8 -485.56,-652.8 0,-210.71 96.75,-405.71 286.29,-502.57 242.89,-124.12 608.49,-97.04 800.97,158.76 27.99,37.21 53.71,79.47 76.53,127.03l324.21 -172.61c-157.6,-366.54 -470.65,-556.26 -864.03,-556.26 -967.65,0 -1270.74,1153.86 -765.85,1700.8 304.76,330.15 806.72,413.88 1130.69,631 238.39,159.77 314.87,302.57 283.48,612.4 -35.81,353.41 -248.2,540.9 -653.69,536.62 -364.87,-3.85 -609.63,-137.68 -761.6,-665.67l-342.79 114.34z"/>
+                <polygon points="27667.99,26529.86 28075.58,26529.86 28075.58,24517.07 29990.27,24517.07 29990.27,26529.86 30396.3,26529.86 30396.3,22776.04 29990.27,22776.04 29990.27,24166.52 28075.58,24166.52 28075.58,22776.04 27667.99,22776.04"/>
+                <path d="M34683.48 26529.86l400.25 0 -1527.53 -3751.75 -92.61 0 -1499.48 3743.74 -3.68 7.83 394.79 0.18 294.79 -743.82 1737.11 0 296.36 743.82zm-1174.88 -2946.18l752.95 1870.97 -1471.82 0 718.87 -1870.97z"/>
+              </svg>
+            </div>
+            <span class="eyebrow-badge">VESSEL PROFILE &amp; GALLERY</span>
+            <h2 id="yacht-profile-title" class="section-main-title">About SY Delusha (43m)</h2>
+            <p id="yacht-profile-summary" class="muted-desc"></p>
+
+            <!-- Saveable Yacht Gallery -->
+            <div id="yacht-photos-grid" class="yacht-gallery-grid"></div>
+
+            <!-- Specifications Grid -->
+            <div class="section-subhead" style="margin-top: 18px;">PRINCIPAL SPECIFICATIONS</div>
+            <div id="yacht-specs-grid" class="specs-grid"></div>
+          </article>
+
+          <!-- 4. Cabin & Life Aboard Etiquette Guide -->
+          <article class="luxury-card">
+            <span class="eyebrow-badge">GOOD TO KNOW ABOARD</span>
+            <h2 class="section-main-title">Cabin &amp; Life Aboard Guide</h2>
+            <div id="life-aboard-grid" class="guidelines-grid"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           OWNER / CAPTAIN ADMIN MODE (PIN-PROTECTED)
+           ========================================================= -->
+      <section id="tab-admin" class="tab-view" aria-label="Owner and Captain Admin Console">
+        <div class="page-scroll-container">
+          <div class="luxury-card admin-header-card">
+            <div class="card-header-flex">
+              <div>
+                <span class="eyebrow-badge gold-badge">🔐 OWNER &amp; CAPTAIN MASTER CONSOLE</span>
+                <h2 class="section-main-title">Voyage Setup, Today Briefing &amp; Tender Pin</h2>
+                <p class="muted-desc">Switch between archived or upcoming guest charters, update today’s schedule, or drop the tender pick-up pin in one tap.</p>
+              </div>
+              <button id="btn-exit-admin" type="button" class="secondary-pill-btn">Exit Admin</button>
+            </div>
+
+            <!-- Master Voyage Switcher & New Trip Creator -->
+            <div class="admin-switcher-bar">
+              <div class="admin-field-group">
+                <label for="admin-voyage-select" class="admin-label">ACTIVE VOYAGE PASS (MASTER ARCHIVE)</label>
+                <select id="admin-voyage-select" class="admin-select"></select>
+              </div>
+              <button id="btn-new-voyage" type="button" class="primary-cta-btn">+ Create New Voyage Pass</button>
+            </div>
+          </div>
+
+          <div class="admin-two-col">
+            <!-- Left Column: Trip Metadata + Today's Briefing Editor -->
+            <div class="admin-col">
+              <article class="luxury-card">
+                <span class="section-subhead">1. VOYAGE PASS &amp; SALOON QR</span>
+                <div class="admin-form-grid">
+                  <label class="admin-field">
+                    <span>Voyage Title</span>
+                    <input id="adm-trip-title" type="text" class="admin-input" />
+                  </label>
+                  <label class="admin-field">
+                    <span>Voyage Code (QR Pass ID)</span>
+                    <input id="adm-trip-code" type="text" class="admin-input mono" />
+                  </label>
+                  <label class="admin-field">
+                    <span>Voyage Dates</span>
+                    <input id="adm-trip-dates" type="text" class="admin-input" />
+                  </label>
+                  <label class="admin-field">
+                    <span>Current Active Stop</span>
+                    <select id="adm-active-stop-idx" class="admin-select"></select>
+                  </label>
+                </div>
+                <div class="admin-btn-row">
+                  <button id="btn-save-trip-meta" type="button" class="primary-cta-btn">Save Voyage Info</button>
+                  <button id="btn-show-saloon-qr" type="button" class="secondary-cta-btn">⊞ Printable Saloon QR Card</button>
+                </div>
+              </article>
+
+              <article class="luxury-card">
+                <span class="section-subhead">2. "TODAY ABOARD" BRIEFING CARD EDITOR</span>
+                <div class="admin-form-grid">
+                  <label class="admin-field">
+                    <span>Current Anchorage / Port Name</span>
+                    <input id="adm-brief-loc" type="text" class="admin-input" />
+                  </label>
+                  <label class="admin-field">
+                    <span>Weather &amp; Wind Summary</span>
+                    <input id="adm-brief-weather" type="text" class="admin-input" />
+                  </label>
+                  <div class="admin-two-mini">
+                    <label class="admin-field">
+                      <span>Air Temp</span>
+                      <input id="adm-brief-air" type="text" class="admin-input mono" />
+                    </label>
+                    <label class="admin-field">
+                      <span>Sea Water Temp</span>
+                      <input id="adm-brief-sea" type="text" class="admin-input mono" />
+                    </label>
+                  </div>
+                  <label class="admin-field">
+                    <span>Today’s Schedule (One item per line: <code>HH:MM | Activity</code>)</span>
+                    <textarea id="adm-brief-schedule" rows="5" class="admin-textarea mono"></textarea>
+                  </label>
+                </div>
+                <button id="btn-save-briefing" type="button" class="primary-cta-btn">Update Today’s Briefing</button>
+              </article>
+
+              <article class="luxury-card">
+                <span class="section-subhead">3. ADD DAILY LOGBOOK STAMP</span>
+                <div class="admin-form-grid">
+                  <div class="admin-two-mini">
+                    <label class="admin-field">
+                      <span>Day &amp; Date</span>
+                      <input id="adm-log-day" type="text" placeholder="Day 4 · Jul 17" class="admin-input" />
+                    </label>
+                    <label class="admin-field">
+                      <span>Leg / Passage Name</span>
+                      <input id="adm-log-route" type="text" placeholder="Korčula → Hvar" class="admin-input" />
+                    </label>
+                  </div>
+                  <div class="admin-three-mini">
+                    <label class="admin-field">
+                      <span>Distance (nm)</span>
+                      <input id="adm-log-nm" type="number" step="0.1" placeholder="34.0" class="admin-input mono" />
+                    </label>
+                    <label class="admin-field">
+                      <span>Peak Sail Speed (kn)</span>
+                      <input id="adm-log-peak" type="number" step="0.1" placeholder="13.8" class="admin-input mono" />
+                    </label>
+                    <label class="admin-field">
+                      <span>Wind Conditions</span>
+                      <input id="adm-log-wind" type="text" placeholder="NW 17 kn · Beam reach" class="admin-input" />
+                    </label>
+                  </div>
+                  <label class="admin-field">
+                    <span>Captain’s Note</span>
+                    <input id="adm-log-note" type="text" placeholder="Smooth afternoon reach across the Korčula channel." class="admin-input" />
+                  </label>
+                </div>
+                <button id="btn-add-log-stamp" type="button" class="primary-cta-btn">+ Add Logbook Stamp</button>
+              </article>
+            </div>
+
+            <!-- Right Column: Itinerary Stop Editor, One-Tap Tender Pin, Crew Toggle & Cloud Config -->
+            <div class="admin-col">
+              <article class="luxury-card">
+                <span class="section-subhead">4. ITINERARY STOPS &amp; ONE-TAP TENDER PICK-UP PIN</span>
+                <p class="muted-caption">Add Mediterranean ports to the voyage chart or update the exact tender pick-up GPS coordinates.</p>
+                <div class="admin-add-stop-row">
+                  <select id="adm-port-picker" class="admin-select"></select>
+                  <button id="btn-adm-add-stop" type="button" class="primary-cta-btn">+ Add Stop</button>
+                </div>
+                <div id="adm-stops-editor-list" class="adm-stops-list"></div>
+              </article>
+
+              <article class="luxury-card">
+                <span class="section-subhead">5. CREW ROSTER ONBOARD TOGGLE</span>
+                <div id="adm-crew-toggle-list" class="adm-crew-list"></div>
+              </article>
+
+              <article class="luxury-card">
+                <span class="section-subhead">6. $0 CLOUD SYNC HOOKS (SUPABASE &amp; GOOGLE DRIVE)</span>
+                <p class="muted-caption">Optional live sync credentials for <code>voyage.sydelusha.com</code> (`njalbout@gmail.com`). Works 100% offline via IndexedDB by default.</p>
+                <div class="admin-form-grid">
+                  <label class="admin-field">
+                    <span>Supabase Project URL</span>
+                    <input id="adm-supa-url" type="url" placeholder="https://xyzcompany.supabase.co" class="admin-input mono" />
+                  </label>
+                  <label class="admin-field">
+                    <span>Supabase Anon Key</span>
+                    <input id="adm-supa-key" type="password" placeholder="eyJhbGciOiJIUzI1NiIsInR..." class="admin-input mono" />
+                  </label>
+                  <label class="admin-field">
+                    <span>Google Drive Folder Path (`sydelusha.com`)</span>
+                    <input id="adm-gdrive-folder" type="text" value="SY Delusha Voyages / 2026" class="admin-input mono" />
+                  </label>
+                </div>
+                <button id="btn-save-cloud-config" type="button" class="secondary-cta-btn">Save Cloud Endpoints</button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation Bar (4 Guest Tabs — Apple Tab Bar Style) -->
+    <nav class="bottom-tab-bar" aria-label="Primary Guest Navigation">
+      <button type="button" class="tab-nav-btn active" data-tab="tab-today">
+        <span class="tab-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+        </span>
+        <span class="tab-label">Today &amp; Map</span>
+      </button>
+      <button type="button" class="tab-nav-btn" data-tab="tab-media">
+        <span class="tab-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="3" rx="3" ry="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+          </svg>
+        </span>
+        <span class="tab-label">Photos &amp; Video</span>
+        <span id="nav-media-badge" class="tab-badge mono">4</span>
+      </button>
+      <button type="button" class="tab-nav-btn" data-tab="tab-crew">
+        <span class="tab-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </span>
+        <span class="tab-label">Crew</span>
+      </button>
+      <button type="button" class="tab-nav-btn" data-tab="tab-yacht">
+        <span class="tab-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1"/><path d="M4 16h16l-2 3H6l-2-3Z"/><path d="M12 3v13"/><path d="M12 4 5 14h7"/><path d="m12 6 6 8h-6"/>
+          </svg>
+        </span>
+        <span class="tab-label">Yacht &amp; Toys</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- =========================================================
+       MODAL 1: PORT SPOTLIGHT & TENDER PICK-UP MINI-GUIDE
+       ========================================================= -->
+  <div id="modal-port-spotlight" class="modal-backdrop" hidden>
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <span id="spot-country-badge" class="eyebrow-badge">CROATIA</span>
+          <h3 id="spot-port-name" class="modal-title">Korčula</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal="modal-port-spotlight">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="spot-atmosphere" class="spot-lead"></p>
+        <div class="spot-section">
+          <div class="section-subhead">MARITIME HISTORY &amp; HERITAGE</div>
+          <p id="spot-history" class="spot-text"></p>
+        </div>
+        <div class="spot-section">
+          <div class="section-subhead">HIGHLIGHTS ASHORE</div>
+          <ul id="spot-highlights" class="spot-highlights-list"></ul>
+        </div>
+        <div class="tender-pin-box">
+          <div class="tender-pin-header">
+            <span class="eyebrow-badge">🚤 SY DELUSHA TENDER PICK-UP PIN</span>
+            <span id="spot-tender-coords" class="mono muted-caption">42.9614°N 17.1355°E</span>
+          </div>
+          <h4 id="spot-tender-name" class="tender-pier-title">Korčula West Riva Stone Steps</h4>
+          <p id="spot-tender-note" class="muted-desc">Below the Venetian Revelin Land Gate tower.</p>
+          <div class="tender-actions-row">
+            <a id="spot-walk-apple-google" href="#" target="_blank" rel="noopener" class="walk-tender-cta full-width-btn">
+              📍 Walk to Tender Pick-Up (Open Maps)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 2: VOYAGE QR PASS & GUEST TRIP SWITCHER
+       ========================================================= -->
+  <div id="modal-voyage-pass" class="modal-backdrop" hidden>
+    <div class="modal-sheet compact-sheet">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow-badge">ZERO-FRICTION SALOON QR PASS</span>
+          <h3 class="modal-title">Voyage Pass &amp; Guest Access</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal="modal-voyage-pass">×</button>
+      </div>
+      <div class="modal-body center-text">
+        <p class="muted-desc">Scan in the saloon on Day 1 to open this isolated voyage directly on any iPhone, iPad, or Android—no account required.</p>
+        <div class="qr-pass-frame">
+          <img src="./delusha-logo.svg" alt="DELUSHA" class="qr-pass-logo" />
+          <canvas id="voyage-qr-canvas" width="200" height="200"></canvas>
+          <div id="qr-pass-trip-title" class="qr-trip-title">Montenegro &amp; Dalmatian Islands Odyssey</div>
+          <div id="qr-pass-code-pill" class="qr-code-badge mono">DELUSHA-JULY-2026</div>
+        </div>
+
+        <div class="switch-voyage-box">
+          <label for="guest-voyage-code-input" class="section-subhead">HAVE ANOTHER VOYAGE CODE?</label>
+          <div class="code-entry-row">
+            <input id="guest-voyage-code-input" type="text" placeholder="e.g. DELUSHA-AUG-2026" class="admin-input mono" />
+            <button id="btn-apply-voyage-code" type="button" class="primary-cta-btn">Join Trip</button>
+          </div>
+          <div class="quick-demo-codes">
+            <span>Demo Passes:</span>
+            <button type="button" class="chip-link" data-demo-code="DELUSHA-JULY-2026">DELUSHA-JULY-2026</button>
+            <button type="button" class="chip-link" data-demo-code="DELUSHA-AUG-2026">DELUSHA-AUG-2026</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 3: OWNER / CAPTAIN PIN ENTRY
+       ========================================================= -->
+  <div id="modal-admin-pin" class="modal-backdrop" hidden>
+    <div class="modal-sheet compact-sheet">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow-badge gold-badge">🔐 RESTRICTED ACCESS</span>
+          <h3 class="modal-title">Owner &amp; Captain PIN</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal="modal-admin-pin">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="muted-desc">Enter the Owner/Captain PIN to unlock the Master Voyage Archive, Today Briefing Editor, and Tender GPS Pin drop.</p>
+        <div class="pin-entry-row">
+          <input id="admin-pin-input" type="password" inputmode="numeric" maxlength="6" placeholder="1943" class="admin-input mono pin-box" />
+          <button id="btn-submit-pin" type="button" class="primary-cta-btn">Unlock Console</button>
+        </div>
+        <p class="muted-caption" style="margin-top:8px;">Default vessel PIN: <code class="mono">1943</code> (or <code class="mono">0000</code>)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 4: END-OF-TRIP SOUVENIR POSTER GENERATOR
+       ========================================================= -->
+  <div id="modal-souvenir" class="modal-backdrop" hidden>
+    <div class="modal-sheet wide-sheet">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow-badge">PRINTABLE &amp; SHAREABLE KEEPSAKE</span>
+          <h3 class="modal-title">End-of-Trip Voyage Souvenir Poster</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal="modal-souvenir">×</button>
+      </div>
+      <div class="modal-body center-text">
+        <div class="poster-preview-wrap">
+          <canvas id="souvenir-poster-canvas" width="1200" height="1600"></canvas>
+        </div>
+        <div class="modal-footer-actions">
+          <button id="btn-download-poster" type="button" class="primary-cta-btn">⬇ Save High-Res Souvenir Poster (PNG)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 5: SALOON TV FULL-SCREEN AMBIENT SLIDESHOW
+       ========================================================= -->
+  <div id="modal-tv-slideshow" class="tv-slideshow-overlay" hidden>
+    <div class="tv-top-bar">
+      <div class="tv-brand">
+        <span class="yacht-name">SY DELUSHA</span>
+        <span id="tv-voyage-title" class="tv-subtitle">Montenegro &amp; Dalmatian Islands Odyssey</span>
+      </div>
+      <div class="tv-controls">
+        <button id="btn-tv-prev" type="button" class="tv-ctrl-btn">◀ Prev</button>
+        <button id="btn-tv-pause" type="button" class="tv-ctrl-btn">⏸ Pause</button>
+        <button id="btn-tv-next" type="button" class="tv-ctrl-btn">Next ▶</button>
+        <button id="btn-tv-close" type="button" class="tv-ctrl-btn close">✕ Exit TV Mode</button>
+      </div>
+    </div>
+    <div class="tv-stage">
+      <img id="tv-slide-img" src="" alt="Voyage Slide" class="tv-slide-media" />
+      <canvas id="tv-map-canvas" width="1280" height="720" class="tv-slide-map" hidden></canvas>
+    </div>
+    <div class="tv-caption-bar">
+      <div>
+        <div id="tv-slide-title" class="tv-caption-title"></div>
+        <div id="tv-slide-meta" class="tv-caption-meta mono"></div>
+      </div>
+      <div id="tv-slide-counter" class="mono tv-counter">1 / 5</div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-banner" class="toast-banner" hidden></div>
+
+  <script src="./coastline-data.js"></script>
+  <script src="./voyage-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
