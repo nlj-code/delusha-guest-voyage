@@ -1,5 +1,5 @@
 // Delusha service worker: works offline and shows phone notifications.
-const VERSION = 'delusha-v5';
+const VERSION = 'delusha-v6';
 const SHELL = [
   './',
   './index.html',
@@ -38,6 +38,7 @@ const SHELL = [
   './js/views/host.js',
   './js/views/crew.js',
   './js/views/tv.js',
+  './js/views/addstop.js',
   './Delusha%20Beauty%20Shots/IMG-20250617-WA0015.jpg',
   './Delusha%20Beauty%20Shots/IMG-20250617-WA0013.jpg',
   './Delusha%20Beauty%20Shots/IMG-20250617-WA0018.jpg'

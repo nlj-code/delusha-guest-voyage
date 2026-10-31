@@ -351,13 +351,13 @@ export class VoyageChart {
     this.canvas.remove();
   }
 
-  setData({ stops, activeIdx, corinth, pins, boat, me }) {
+  setData({ stops, activeIdx, corinth, pins, boat, me, labels, todayLabel }) {
     const update = () => {
       this.data.legs = computeLegs(this.data.stops, this.data.activeIdx, corinth);
       if (!this.fitted && this.data.legs.every((l) => l.ready)) this.fit();
       this.draw();
     };
-    Object.assign(this.data, { stops, activeIdx, pins, boat, me });
+    Object.assign(this.data, { stops, activeIdx, pins, boat, me, labels, todayLabel });
     this.data.legs = computeLegs(stops, activeIdx, corinth, update);
     if (!this.fitted) this.fit(true);
     this.draw();
@@ -520,4 +520,24 @@ export class VoyageChart {
       { passive: false }
     );
   }
+}
+
+// True when the point is on land, using the offline coastline (even-odd test).
+export function isLand(lat, lon) {
+  decodeCoast();
+  const y = latToMercY(lat);
+  let inside = false;
+  for (const r of rings) {
+    if (lon < r.minX || lon > r.maxX || y < r.minY || y > r.maxY) continue;
+    const c = r.coords;
+    const n = c.length / 2;
+    for (let i = 0, j = n - 1; i < n; j = i++) {
+      const xi = c[i * 2];
+      const yi = c[i * 2 + 1];
+      const xj = c[j * 2];
+      const yj = c[j * 2 + 1];
+      if (yi > y !== yj > y && lon < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+    }
+  }
+  return inside;
 }

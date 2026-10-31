@@ -5,6 +5,7 @@ import { notify } from '../push.js';
 import { sharing, startSharing, stopSharing, onSharing } from '../position.js';
 import { switchTrip } from '../session.js';
 import { busy, openSheet, confirmSheet, qrSvg, segHtml, bindChips } from './ui.js';
+import { openAddStop } from './addstop.js';
 
 const TEMPLATES = [
   ['Tender in 15 min', 'Tender leaves in 15 minutes', 'Meet at the stern swim platform.'],
@@ -413,7 +414,6 @@ function normTime(t) {
 function renderRoute(el) {
   const stops = state.stops;
   const cur = currentStop();
-  const ports = self.DELUSHA_DATA?.PRESET_PORTS || [];
   el.innerHTML = `${head('Itinerary')}
     <div class="page wrap stack" style="padding-top:16px;padding-bottom:40px">
       <div class="card tight">
@@ -424,7 +424,7 @@ function renderRoute(el) {
                   (s, i) => `<div class="list-row">
                     <div class="num ${s.id === cur?.id ? 'cur' : ''}">${i + 1}</div>
                     <button class="grow" data-edit="${s.id}" style="background:none;border:0;text-align:left;padding:0">
-                      <div class="t">${esc(s.name)}</div><div class="s">${esc([s.arrive_on ? fmtDate(s.arrive_on) : '', s.tender_name || ''].filter(Boolean).join(' · ') || 'Tap to set date and tender point')}</div></button>
+                      <div class="t">${esc(s.name)}</div><div class="s">${esc([s.kind || '', s.arrive_on ? fmtDate(s.arrive_on) : '', s.tender_name || ''].filter(Boolean).join(' · ') || 'Tap to set date and tender point')}</div></button>
                     ${s.id === cur?.id ? '<span class="badge live">Today</span>' : `<button class="btn sm light" data-today="${s.id}">Today</button>`}
                     <div style="display:flex;flex-direction:column">
                       <button class="icon-btn plain" style="height:26px" data-up="${i}" aria-label="Move up" ${i === 0 ? 'disabled' : ''}>▲</button>
@@ -436,18 +436,7 @@ function renderRoute(el) {
             : '<div class="empty">No stops yet. Add the first one below.</div>'
         }
       </div>
-      <div class="card">
-        <h2 class="h3">Add a stop</h2>
-        <label class="lbl" for="pp">Mediterranean port</label>
-        <select class="field" id="pp"><option value="">Choose a port…</option>${ports.map((p) => `<option value="${p.id}">${esc(p.name)}, ${esc(p.country)}</option>`).join('')}</select>
-        <button class="btn block mt12" id="addp">Add port</button>
-        <details class="mt12"><summary class="small" style="cursor:pointer;color:var(--accent);font-weight:600">Or add any anchorage by coordinates</summary>
-          <label class="lbl" for="cn">Name</label><input class="field" id="cn" placeholder="e.g. Lakka Bay">
-          <div class="grid2"><div><label class="lbl" for="cla">Latitude</label><input class="field" id="cla" inputmode="decimal" placeholder="39.24"></div>
-          <div><label class="lbl" for="clo">Longitude</label><input class="field" id="clo" inputmode="decimal" placeholder="20.13"></div></div>
-          <div class="btn-row mt12"><button class="btn light" id="here" type="button">${icon('locate', 16)}Use my GPS</button><button class="btn" id="addc" type="button">Add</button></div>
-        </details>
-      </div>
+      <button class="btn accent block lg" id="addstop">${icon('plus', 18)}Add a stop</button>
       <div class="card row"><div class="grow"><div class="h3">Route through the Corinth Canal</div><div class="tiny muted">When sailing between the Ionian and the Aegean</div></div>
         <button class="switch" role="switch" aria-checked="${state.trip.allow_corinth}" id="cor" aria-label="Allow Corinth Canal"></button></div>
     </div>`;
@@ -459,18 +448,6 @@ function renderRoute(el) {
     await load('stops');
     refresh();
   };
-  const addStop = async (row) => {
-    const { error } = await sb.from('stops').insert({ trip_id: state.trip.id, seq: stops.length, ...row });
-    if (error) return toast('Could not add.', 'error');
-    await load('stops');
-    if (!state.trip.current_stop_id && state.stops[0]) {
-      await sb.from('trips').update({ current_stop_id: state.stops[0].id }).eq('id', state.trip.id);
-      await load('trip');
-    }
-    toast(`Added ${row.name}`);
-    refresh();
-  };
-
   el.querySelectorAll('[data-up],[data-down]').forEach((b) =>
     b.addEventListener('click', () => {
       const i = Number(b.dataset.up ?? b.dataset.down);
@@ -489,27 +466,7 @@ function renderRoute(el) {
     })
   );
   el.querySelectorAll('[data-edit]').forEach((b) => b.addEventListener('click', () => editStop(stops.find((s) => s.id === b.dataset.edit))));
-  el.querySelector('#addp').onclick = () => {
-    const p = ports.find((x) => x.id === el.querySelector('#pp').value);
-    if (!p) return toast('Choose a port first.');
-    addStop({ port_id: p.id, name: p.name, lat: p.lat, lon: p.lon, tender_name: p.tenderName || null, tender_lat: p.tenderLat ?? null, tender_lon: p.tenderLon ?? null });
-  };
-  el.querySelector('#here').onclick = () =>
-    navigator.geolocation?.getCurrentPosition(
-      (p) => {
-        el.querySelector('#cla').value = p.coords.latitude.toFixed(5);
-        el.querySelector('#clo').value = p.coords.longitude.toFixed(5);
-      },
-      () => toast('Allow location access first.'),
-      { enableHighAccuracy: true, timeout: 20000 }
-    );
-  el.querySelector('#addc').onclick = () => {
-    const name = el.querySelector('#cn').value.trim();
-    const lat = parseFloat(el.querySelector('#cla').value);
-    const lon = parseFloat(el.querySelector('#clo').value);
-    if (!name || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return toast('Add a name and valid coordinates.');
-    addStop({ name, lat, lon });
-  };
+  el.querySelector('#addstop').onclick = () => openAddStop();
   el.querySelector('#cor').onclick = async (e) => {
     const on = e.currentTarget.getAttribute('aria-checked') !== 'true';
     const { error } = await sb.from('trips').update({ allow_corinth: on }).eq('id', state.trip.id);

@@ -15,6 +15,7 @@ First sign-in for hosts and crew: a host adds their email under **Host → Hosts
 ## Features
 
 - **Today**: day and status, live weather and sea temperature (Open-Meteo), "next up" card, schedule, walking directions to the tender.
+- **Itinerary editing (hosts)**: add a stop by searching its name (OpenStreetMap), dropping a pin on the map, or using GPS — no coordinates needed.
 - **Voyage**: offline Mediterranean chart with routing around land, live position from a host phone, itinerary, port guides, logbook.
 - **Photos**: full-quality uploads (photos up to 2560 px, videos up to 50 MB) shared with everyone on the trip; uploads wait and send by themselves when signal returns; favourites; save to phone; Saloon TV slideshow; keepsake poster.
 - **Dining**: daily menus with automatic allergy checks; notes to the chef.

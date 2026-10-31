@@ -262,9 +262,13 @@ const noHScroll = async (p, n) => { const w = await p.evaluate(() => document.do
     // route
     await page.goto(URL0 + '#/host/route');
     await wait(page, 800);
-    await page.selectOption('#pp', 'hydra');
-    await page.click('#addp');
-    await wait(page, 900);
+    await page.click('#addstop');
+    await page.fill('#q', 'Hydra');
+    await wait(page, 1500);
+    await page.locator('[data-r]').first().click();
+    await wait(page, 600);
+    await page.click('#add');
+    await wait(page, 1200);
     check('port added to route', db.tables.stops.some((s) => s.name === 'Hydra'));
     await page.locator('[data-today]').first().click();
     await wait(page, 700);
