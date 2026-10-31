@@ -81,7 +81,7 @@ The **SY Delusha · Guest Voyage & Companion App** solves these problems in a si
 * Displays vector monogram portrait avatars, role badge, full name, nationality flag, languages spoken, and personal maritime bio.
 
 #### 4.5 Tab 4: The Yacht, Water Toys & Life Aboard (`index.html`, `voyage-data.js`)
-* **Starlink Wi-Fi Instant Card:** One-tap `Copy` buttons for SSID (`SY_Delusha_Starlink`) and Password (`SailsUp2026!`) plus an auto-generated **Wi-Fi QR Code** (`WIFI:T:WPA;S:...`) so guests can point their iPhone/Android camera to join Wi-Fi immediately.
+* **Starlink Wi-Fi Instant Card:** One-tap `Copy` buttons for SSID (`SY_Delusha_Starlink`) and password (stored in Supabase, visible only to signed-in guests) plus an auto-generated **Wi-Fi QR Code** (`WIFI:T:WPA;S:...`) so guests can point their iPhone/Android camera to join Wi-Fi immediately.
 * **Water Toys & Tender Locker (8 Cards):** 6.2m Custom 150 HP Rib Tender, 2× Seabob F5S, Lift3 eFoil, 4× Teak Paddleboards, Wakeboard & Water-Skis, NautiBuoy Floating Sea Lounge, Snorkeling/Dive Locker, and Offshore Fishing Gear.
 * **About SY Delusha (43m) & Real Beauty Shots Gallery:**
   * Displays the official stacked **Delusha** vector logo, vessel summary, **11 saveable high-resolution photographs** of SY Delusha under sail, at anchor, on deck, and inside the panoramic deckhouse saloon, plus 8 principal technical specifications.
