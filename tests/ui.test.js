@@ -117,10 +117,11 @@ const noHScroll = async (p, n) => { const w = await p.evaluate(() => document.do
     check('live position card', await page.locator('text=At anchor').isVisible());
     await shot(page, '07-voyage');
     await page.click('[data-stop="1"]');
-    await wait(page, 500);
-    check('port guide opens', await page.locator('.sheet .h1').isVisible());
-    await shot(page, '08-port');
-    await page.click('.sheet [data-close] >> nth=-1');
+    await wait(page, 900);
+    check('destination guide opens', page.url().includes('#/guide/') && (await page.locator('.hero h1').textContent()).includes('Paxos'));
+    await shot(page, '08-guide');
+    await page.click('a[aria-label="Back to Voyage"]');
+    await wait(page, 600);
 
     // photos upload
     await page.click('#tabbar >> text=Photos');

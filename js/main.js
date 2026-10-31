@@ -19,8 +19,9 @@ import requests from './views/requests.js';
 import host from './views/host.js';
 import crew from './views/crew.js';
 import tv from './views/tv.js';
+import guide from './views/guide.js';
 
-const routes = { welcome, login, today, voyage, photos, dining, aboard, safety, alerts, prefs, requests, host, crew, tv };
+const routes = { welcome, login, today, voyage, photos, dining, aboard, safety, alerts, prefs, requests, host, crew, tv, guide };
 
 const TABS = [
   ['today', 'Today', 'today'],

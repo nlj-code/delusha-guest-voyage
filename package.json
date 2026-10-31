@@ -5,6 +5,6 @@
   "description": "SY Delusha guest companion app: today's plan, voyage map, shared photos, menus, safety, requests and a host console.",
   "scripts": {
     "start": "python3 -m http.server 3030",
-    "test": "node tests/ui.test.js && node tests/addstop.test.js && node tests/offline.test.js"
+    "test": "node tests/ui.test.js && node tests/addstop.test.js && node tests/guide.test.js && node tests/offline.test.js"
   }
 }

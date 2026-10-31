@@ -1,7 +1,7 @@
 import { state, currentStop, isHost, isStaff, menusFor } from '../store.js';
 import { esc, icon, isoDate, tripDay, fmtDate, timeAgo } from '../util.js';
 import { getWeather } from '../weather.js';
-import { HERO } from './ui.js';
+import { HERO, PHOTOS } from './ui.js';
 
 export function unreadAlerts() {
   let seen = 0;
@@ -137,6 +137,8 @@ export default {
           }
         </div>
 
+        ${exploreCard(stop)}
+
         <div class="grid2" style="margin:16px 16px 0">
           <a class="qt" href="#/dining">${icon('dining')}<div><div class="t">${dinner ? `Tonight's ${esc(dinner.meal)}` : "Today's menu"}</div><div class="s">${dinner ? esc([dinner.served_at, dinner.location].filter(Boolean).join(' · ') || 'See the menu') : 'From the chef'}</div></div></a>
           ${
@@ -187,6 +189,25 @@ export default {
     return () => clearInterval(t);
   }
 };
+
+// "Explore" card: today's stop, or tomorrow's from late afternoon so guests can plan.
+function exploreCard(stop) {
+  if (!stop) return '';
+  const tomorrow = isoDate(new Date(Date.now() + 86400000));
+  const next = state.stops.find((s) => s.arrive_on === tomorrow && s.id !== stop.id);
+  const late = new Date().getHours() >= 16;
+  const target = late && next ? next : stop;
+  const when = target === next ? 'Tomorrow' : 'Explore';
+  return `<a class="card row" href="#/guide/${target.id}" style="margin:16px 16px 0;text-decoration:none;color:inherit;padding:0;overflow:hidden">
+    <img src="${PHOTOS.aerial}" alt="" style="width:96px;height:96px;object-fit:cover;flex:none">
+    <div class="grow" style="padding:12px 4px">
+      <div class="eyebrow brass">${when}</div>
+      <div class="h3 mt8" style="font-size:17px">${esc(target.name)}</div>
+      <div class="tiny muted">Guide, getting ashore, our picks</div>
+    </div>
+    <span style="padding-right:14px;color:#9AA1A8">${icon('chev', 18)}</span>
+  </a>`;
+}
 
 function inLabel(min) {
   if (min <= 0) return 'now';

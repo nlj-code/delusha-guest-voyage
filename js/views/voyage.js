@@ -1,39 +1,6 @@
 import { state, currentStopIndex, isHost } from '../store.js';
 import { esc, icon, timeAgo, fmtDate, toast } from '../util.js';
 import { VoyageChart } from '../map.js';
-import { openSheet } from './ui.js';
-import { tenderUrl } from './today.js';
-
-const ports = () => self.DELUSHA_DATA?.PRESET_PORTS || [];
-
-function portInfo(stop) {
-  return ports().find((p) => p.id === stop.port_id) || ports().find((p) => p.name === stop.name) || null;
-}
-
-export function openPortSheet(stop) {
-  const p = portInfo(stop);
-  const url = tenderUrl(stop);
-  openSheet(
-    `<div class="eyebrow brass">${esc(p?.country || 'Stop')}</div>
-     <h2 class="h1" style="font-size:32px;margin-top:4px">${esc(stop.name)}</h2>
-     ${stop.arrive_on ? `<p class="muted small mt8">${esc(fmtDate(stop.arrive_on, { weekday: 'long', day: 'numeric', month: 'long' }))}</p>` : ''}
-     ${p?.atmosphere ? `<p class="mt12">${esc(p.atmosphere)}</p>` : ''}
-     ${p?.history ? `<p class="muted small mt12">${esc(p.history)}</p>` : ''}
-     ${
-       p?.highlights?.length
-         ? `<div class="card mt16"><div class="h3">Ashore</div><ul style="margin:8px 0 0;padding-left:18px">${p.highlights.map((h) => `<li class="small" style="margin:4px 0">${esc(h)}</li>`).join('')}</ul></div>`
-         : ''
-     }
-     <div class="card mt12">
-       <div class="h3">Tender pick-up</div>
-       <p class="small mt8">${esc(stop.tender_name || p?.tenderName || 'The crew will confirm the landing spot.')}</p>
-       ${p?.tenderNote && !stop.tender_name ? `<p class="small muted mt8">${esc(p.tenderNote)}</p>` : ''}
-       ${url ? `<a class="btn accent block mt12" href="${url}" target="_blank" rel="noopener">${icon('pin', 16)}Walking directions</a>` : ''}
-     </div>
-     <button class="btn light block mt12" data-close>Close</button>`,
-    { label: stop.name }
-  );
-}
 
 export default {
   title: 'Voyage',
@@ -99,6 +66,7 @@ export default {
                       <div class="num ${st}">${i + 1}</div>
                       <div class="grow"><div class="t">${esc(s.name)}</div><div class="s" data-meta="${i}">${esc(s.arrive_on ? fmtDate(s.arrive_on) : '')}</div></div>
                       <span class="badge ${st === 'cur' ? 'live' : ''}">${st === 'done' ? 'Sailed' : st === 'cur' ? 'Today' : 'Planned'}</span>
+                      ${icon('chev', 16, 'style="color:#9AA1A8;flex:none"')}
                     </button>`;
                   })
                   .join('')
@@ -123,7 +91,7 @@ export default {
         }
       </div>`;
 
-    const chart = new VoyageChart(el.querySelector('#chart'), { onStopTap: (i) => openPortSheet(stops[i]) });
+    const chart = new VoyageChart(el.querySelector('#chart'), { onStopTap: (i) => (location.hash = `#/guide/${stops[i].id}`) });
     let me = null;
     const setData = () =>
       chart.setData({
@@ -171,9 +139,7 @@ export default {
       const b = e.target.closest('[data-stop]');
       if (!b) return;
       const s = stops[Number(b.dataset.stop)];
-      chart.centerOn(s.lat, s.lon, 0.5);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      openPortSheet(s);
+      location.hash = `#/guide/${s.id}`;
     });
 
     return () => {

@@ -47,3 +47,38 @@ export async function getWeather(lat, lon) {
     }
   }
 }
+
+// Sunset, daytime high and sea temperature for a given day (up to about two weeks ahead).
+export async function getDayForecast(lat, lon, date) {
+  const key = `delusha:wxday:${lat.toFixed(2)},${lon.toFixed(2)}:${date}`;
+  try {
+    const c = JSON.parse(localStorage.getItem(key) || 'null');
+    if (c && Date.now() - c.at < 3 * 3600 * 1000) return c.data;
+  } catch {
+    /* ignore */
+  }
+  try {
+    const [f, m] = await Promise.all([
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=sunset,temperature_2m_max,weather_code&timezone=auto&start_date=${date}&end_date=${date}`).then((r) => r.json()),
+      fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lon}&hourly=sea_surface_temperature&timezone=auto&start_date=${date}&end_date=${date}`).then((r) => r.json()).catch(() => null)
+    ]);
+    const sst = m?.hourly?.sea_surface_temperature?.filter(Number.isFinite) || [];
+    const data = {
+      sunset: f.daily?.sunset?.[0]?.slice(11, 16) || null,
+      high: Number.isFinite(f.daily?.temperature_2m_max?.[0]) ? Math.round(f.daily.temperature_2m_max[0]) : null,
+      sea: sst.length ? Math.round(sst[Math.floor(sst.length / 2)]) : null
+    };
+    try {
+      localStorage.setItem(key, JSON.stringify({ at: Date.now(), data }));
+    } catch {
+      /* ignore */
+    }
+    return data;
+  } catch {
+    try {
+      return JSON.parse(localStorage.getItem(key) || 'null')?.data || null;
+    } catch {
+      return null;
+    }
+  }
+}

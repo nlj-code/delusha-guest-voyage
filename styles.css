@@ -99,6 +99,7 @@ button:disabled { cursor: not-allowed; opacity: 0.55; }
 .card.ok { background: var(--live-soft); color: #1B5A3A; }
 .card.info { background: var(--accent-soft); color: var(--accent-ink); }
 .card + .card { margin-top: 12px; }
+.grid2 > .card, .grid3 > .card, .grid4 > .card, .stack > .card, .stack-s > .card, .btn-row > .card { margin-top: 0; }
 .list-row { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 8px 0; border-bottom: 1px solid #F0EEE9; color: var(--ink); text-decoration: none; }
 .list-row:last-child { border-bottom: 0; }
 .list-row .t { font-size: 15px; font-weight: 600; }
