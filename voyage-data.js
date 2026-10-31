@@ -337,11 +337,6 @@
         src: './Delusha%20Beauty%20Shots/IMG-20250617-WA0012.jpg'
       }
     ],
-    wifi: {
-      network: 'SY_Delusha_Starlink',
-      password: 'SailsUp2026!',
-      band: 'High-Speed Maritime Starlink (5GHz / 2.4GHz)'
-    },
     lifeAboard: [
       {
         icon: '🦶',

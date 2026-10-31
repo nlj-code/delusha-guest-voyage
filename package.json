@@ -1,6 +1,10 @@
 {
   "name": "delusha-guest-voyage",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "SY Delusha · Guest Voyage & Companion App PWA (Logbook, Shared Media Gallery, Crew, Yacht & Toys)"
+  "description": "SY Delusha guest companion app: today's plan, voyage map, shared photos, menus, safety, requests and a host console.",
+  "scripts": {
+    "start": "python3 -m http.server 3030",
+    "test": "node tests/ui.test.js && node tests/offline.test.js"
+  }
 }
