@@ -16,20 +16,32 @@ export function qrSvg(text, size = 76) {
   return `<svg viewBox="0 0 ${n} ${n}" width="${size}" height="${size}" shape-rendering="crispEdges" role="img" aria-label="QR code"><rect width="${n}" height="${n}" fill="#fff"/><path d="${d}" fill="#0E1B26"/></svg>`;
 }
 
-// Bottom sheet. Returns { el, close }.
-export function openSheet(html, { onClose, label = 'Dialog' } = {}) {
+// Pop-up card. "full" slides up and fills the screen; "dialog" is a small centred box.
+// Returns { el, close }.
+let openCount = 0;
+export function openSheet(html, { onClose, label = 'Dialog', size = 'full' } = {}) {
   const el = document.createElement('div');
-  el.className = 'sheet open';
+  el.className = `sheet open ${size}`;
   el.setAttribute('role', 'dialog');
   el.setAttribute('aria-modal', 'true');
   el.setAttribute('aria-label', label);
-  el.innerHTML = `<div class="bg" data-close></div><div class="panel"><div class="grabber"></div>${html}</div>`;
+  el.innerHTML = `<div class="bg" data-close></div><div class="panel">${
+    size === 'full'
+      ? `<div class="sheet-bar"><div class="grabber" style="margin:0"></div><button class="icon-btn plain sheet-x" data-close aria-label="Close">${icon('close', 22)}</button></div>`
+      : ''
+  }<div class="sheet-content">${html}</div></div>`;
   document.body.appendChild(el);
+  // Keep the page behind from scrolling while the card is open.
+  if (openCount++ === 0) document.body.classList.add('locked');
   const prevFocus = document.activeElement;
+  let closed = false;
   const close = () => {
+    if (closed) return;
+    closed = true;
     el.remove();
+    if (--openCount === 0) document.body.classList.remove('locked');
     document.removeEventListener('keydown', onKey);
-    prevFocus?.focus?.();
+    prevFocus?.focus?.({ preventScroll: true });
     onClose?.();
   };
   const onKey = (e) => e.key === 'Escape' && close();
@@ -37,7 +49,11 @@ export function openSheet(html, { onClose, label = 'Dialog' } = {}) {
   el.addEventListener('click', (e) => {
     if (e.target.closest('[data-close]')) close();
   });
-  setTimeout(() => el.querySelector('input, textarea, select, button:not([data-close])')?.focus?.(), 50);
+  window.addEventListener('hashchange', close, { once: true });
+  setTimeout(() => {
+    const target = size === 'dialog' ? el.querySelector('[data-ok], button') : el.querySelector('.sheet-x');
+    target?.focus?.({ preventScroll: true });
+  }, 50);
   return { el, close };
 }
 
@@ -47,7 +63,7 @@ export function confirmSheet(title, body, okLabel = 'Confirm', danger = false) {
     const { el, close } = openSheet(
       `<h2 class="h2">${esc(title)}</h2><p class="muted mt8">${esc(body)}</p>
        <div class="btn-row mt16"><button class="btn light" data-close>Cancel</button><button class="btn ${danger ? 'danger' : ''}" data-ok>${esc(okLabel)}</button></div>`,
-      { onClose: () => resolve(ok), label: title }
+      { onClose: () => resolve(ok), label: title, size: 'dialog' }
     );
     el.querySelector('[data-ok]').addEventListener('click', () => {
       ok = true;

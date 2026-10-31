@@ -1,5 +1,5 @@
 // Delusha service worker: works offline and shows phone notifications.
-const VERSION = 'delusha-v6';
+const VERSION = 'delusha-v7';
 const SHELL = [
   './',
   './index.html',
